@@ -7,9 +7,11 @@ This project uses face recognition technology to automatically control a door, e
 ### Real-time face recognition.
 - Find face in screen and identify whether the face exist on the database
 - Provide user information after recognized
-- Automatic door control using a Raspberry Pi.
+### Automatic door control using a Raspberry Pi.
+- Automatically open the door after recognizing the user
 - Database integration for authorized users.
 - Email notifications for unauthorized access attempts.
+### Design
 
 ## Installation
 You can use this command to install Python packages directly in the system-wide environment using pip:
