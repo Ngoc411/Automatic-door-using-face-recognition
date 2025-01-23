@@ -61,3 +61,7 @@ pip install numpy
 pip install pillow
 pip install pigpio
 ```
+
+## Code explain
+
+### Loading User Face Data
