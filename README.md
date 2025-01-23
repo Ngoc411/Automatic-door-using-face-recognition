@@ -75,5 +75,60 @@ for i in imagesList:
     i = i.split('.')
     id_picture.append(i[0])
 ```
-* The program loads all images from the images folder.
-* It extracts user IDs from the image filenames (e.g., user1.jpg → user1).
+- The program loads all images from the images folder.
+- It extracts user IDs from the image filenames (e.g., user1.jpg → user1).
+```python
+imgList = []
+Ids = []
+
+for image in imagesList:
+    imgList.append(cv2.imread(os.path.join(folderImages, image)))
+    Ids.append(os.path.splitext(image)[0])
+```
+- Loads each image in the images folder into imgList.
+- Stores the image IDs (user names) in the Ids list.
+
+###  Encoding Faces
+
+```python
+def findEncode(imagesList):
+    encodeList = []
+    for img in imagesList:
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        encode = fr.face_encodings(img)[0]
+        encodeList.append(encode)
+    return encodeList, encode
+
+encodeList, encode = findEncode(imgList)
+```
+
+- This function converts the loaded images to RGB format and generates face encodings.
+- The encodeList will store the encodings for each user's face, which will later be used to compare against the live camera feed.
+
+### Loading Display Modes and User Information
+
+```python
+folderModes = 'modes'
+folderList = os.listdir(folderModes)
+modesList = []
+
+for mode in folderList:
+    modesList.append(cv2.imread(os.path.join(folderModes, mode)))
+```
+- Loads all mode images from the modes folder (such as mode1.png, mode2.png, etc.).
+```python
+folderInformation = 'information'
+folderList2 = os.listdir(folderInformation)
+informationList = []
+
+for infor in folderList2:
+    informationList.append(cv2.imread(os.path.join(folderInformation, infor)))
+```
+- Loads all user information images from the information folder.
+```python
+information_name = []
+for i in folderList2:
+    i = i.split('.')
+    information_name.append(i[0])
+```
+- Extracts user information filenames without extensions (e.g., user1.jpg → user1).
