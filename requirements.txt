@@ -3,3 +3,4 @@ opencv-python
 cvzone
 numpy
 pillow
+pigpio python3-pigpio
