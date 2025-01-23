@@ -1,1 +1,1 @@
-# Automatic-door-using-face-recognition
+# Automatic Door Using Face Recognition
