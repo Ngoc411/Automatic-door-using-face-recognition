@@ -28,14 +28,14 @@ Create virtual environment:
 python3 -m venv venv_name
 ```
 
-After activated the virtual enviroment, you can install python packages using: 
-```
-pip install <package_name>
-```
-
 Activate the virtual environment:
 ```
 source venv_name/bin/active
+```
+
+After activated the virtual enviroment, you can install python packages using: 
+```
+pip install <package_name>
 ```
 
 Deactivate the virtual environment:
