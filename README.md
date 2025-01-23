@@ -43,4 +43,6 @@ Deactivate the virtual environment:
 deactivate
 ```
 
+In my case, i'm using a virtual environment to run these scripts, i recommend using virtual environment to prevent conflict with the system's root environment.
+
 1. Install 
