@@ -43,6 +43,22 @@ Deactivate the virtual environment:
 deactivate
 ```
 
-In my case, i'm using a virtual environment to run these scripts, i recommend using virtual environment to prevent conflict with the system's root environment.
+In my case, i'm using a virtual environment to run these scripts. Recommend using virtual environment to prevent conflict with the system's root environment.
 
-1. Install 
+1. Install
+Install requirements:
+```
+sudo apt update
+```
+
+```
+pip install face_recognition
+pip install opencv-python
+```
+
+```
+pip install cvzone
+pip install numpy
+pip install pillow
+pip install pigpio
+```
