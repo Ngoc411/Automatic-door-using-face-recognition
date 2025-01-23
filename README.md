@@ -4,7 +4,9 @@
 This project uses face recognition technology to automatically control a door, enhancing security and convenience. It uses OpenCV and machine learning models to detect and authenticate faces.
 
 ## Features
-- Real-time face recognition.
+### Real-time face recognition.
+- Find face in screen and identify whether the face exist on the database
+- Provide user information after recognized
 - Automatic door control using a Raspberry Pi.
 - Database integration for authorized users.
 - Email notifications for unauthorized access attempts.
