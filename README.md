@@ -17,7 +17,7 @@ sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
 
 You can also create a virtual environment to install Python packages by following these steps:
 
-Install the venv library:
+Install venv library:
 ```bash
 sudo apt update
 sudo apt install python3-venv 
@@ -26,6 +26,16 @@ sudo apt install python3-venv
 Create virtual environment:
 ```
 python3 -m venv venv_name
+```
+
+Activate the virtual environment:
+```
+source venv_name/bin/active
+```
+
+Deactivate the virtual environment:
+```
+deactivate
 ```
 
 1. Install 
