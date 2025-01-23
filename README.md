@@ -132,3 +132,51 @@ for i in folderList2:
     information_name.append(i[0])
 ```
 - Extracts user information filenames without extensions (e.g., user1.jpg → user1).
+
+### Servo Control Functions
+```python
+def control_servo_right(stop_servo_event)
+```
+```python
+def control_servo_left(stop_servo_event)
+```
+- These functions handle the servo motor movement by setting the pulse width.
+- The motors rotate to specific angles (0°, 90°, and 180°) depending on the recognition result.
+
+### Camera and Face Recognition Loop
+```python
+def active_camera():
+    cap = cv2.VideoCapture(0)
+    cap.set(3, 640)  
+    cap.set(4, 480)  
+
+    while True:
+        success, img = cap.read()
+        imgs = cv2.resize(img, (0, 0), None, 0.25, 0.25)
+        imgs = cv2.cvtColor(imgs, cv2.COLOR_BGR2RGB)
+
+        faceCurFrame = fr.face_locations(imgs)
+        encodeCurFrame = fr.face_encodings(imgs, faceCurFrame)
+```
+- Initializes the camera and continuously captures frames.
+- Converts the captured frames to RGB format and detects faces using face_recognition.
+```python
+for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
+    matches = fr.compare_faces(encodeList, encodeFace)
+    faceDis = fr.face_distance(encodeList, encodeFace)
+    matchIndex = np.argmin(faceDis)
+```
+- Compares the face encodings from the live feed against the preloaded encodings.
+- Finds the closest match and calculates the face distance to identify the user.
+
+### Start the threads
+```python
+camera_thread = threading.Thread(target = active_camera)
+camera_thread.start()
+engine_thread_right.start()
+engine_thread_left.start()
+
+camera_thread.join()
+engine_thread_right.join()
+engine_thread_left.join()
+```
