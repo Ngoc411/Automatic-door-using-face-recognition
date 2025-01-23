@@ -11,12 +11,7 @@ This project uses face recognition technology to automatically control a door, e
 
 ## Installation
 You can use this command to install Python packages directly in the system-wide environment using pip:
+```bash
 sudo rm /usr/lib/python3.11/EXTERNALLY-MANAGED
+```
 1. Install 
-
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/username/repo-name.git
-   cd repo-name
