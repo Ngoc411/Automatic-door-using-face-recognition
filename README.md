@@ -45,8 +45,7 @@ deactivate
 
 In my case, i'm using a virtual environment to run these scripts. Recommend using virtual environment to prevent conflict with the system's root environment.
 
-1. Install
-Install requirements:
+1. Install requirements:
 ```
 sudo apt update
 ```
