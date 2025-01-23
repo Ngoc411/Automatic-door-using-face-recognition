@@ -65,3 +65,13 @@ pip install pigpio
 ## Code explain
 
 ### Loading User Face Data
+
+```python
+folderImages = 'images'
+imagesList = os.listdir(folderImages)
+id_picture = []
+
+for i in imagesList:
+    i = i.split('.')
+    id_picture.append(i[0])
+```
