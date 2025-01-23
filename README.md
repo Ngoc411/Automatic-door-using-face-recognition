@@ -75,3 +75,5 @@ for i in imagesList:
     i = i.split('.')
     id_picture.append(i[0])
 ```
+* The program loads all images from the images folder.
+* It extracts user IDs from the image filenames (e.g., user1.jpg → user1).
