@@ -153,6 +153,8 @@ for infor in folderList2:
     informationList.append(cv2.imread(os.path.join(folderInformation, infor)))
 ```
 
+![iamge alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/301ab802f8225a4f7c7617c489929afac1dc80ab/Screenshot%202025-01-24%20161114.png)
+
 - Loads user information images (e.g., user profiles) from the information folder.
 
 ```python
