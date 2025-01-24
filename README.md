@@ -38,10 +38,10 @@ python3 -m venv venv_name
 
 Activate the virtual environment:
 ```
-source venv_name/bin/active
+source venv_name/bin/activate
 ```
 
-After activated the virtual enviroment, you can install python packages using: 
+After activated the virtual environment, you can install python packages using: 
 ```
 pip install <package_name>
 ```
@@ -77,10 +77,14 @@ pip install pigpio
 Config servo right using GPIO 17, servo left using GPIO 27.
 Supply a 5V power to servo motors.
 
-## Useage
+## Usage
+
+### Overview
+The system processes user face data, encodes the faces for recognition, and uses this information to control the servo motors that operate the door. Below are the key steps:
+
+---
 
 ### Loading User Face Data
-
 ```python
 folderImages = 'images'
 imagesList = os.listdir(folderImages)
@@ -90,8 +94,10 @@ for i in imagesList:
     i = i.split('.')
     id_picture.append(i[0])
 ```
-- The program loads all images from the images folder.
-- It extracts user IDs from the image filenames (e.g., user1.jpg → user1).
+
+- The program scans the images folder for all image files.
+- It extracts user IDs from the filenames (e.g., user1.jpg → user1).
+
 ```python
 imgList = []
 Ids = []
@@ -100,10 +106,11 @@ for image in imagesList:
     imgList.append(cv2.imread(os.path.join(folderImages, image)))
     Ids.append(os.path.splitext(image)[0])
 ```
-- Loads each image in the images folder into imgList.
-- Stores the image IDs (user names) in the Ids list.
 
-###  Encoding Faces
+- The images are loaded into the imgList array.
+- User IDs are saved in the Ids list.
+
+### Encoding faces
 
 ```python
 def findEncode(imagesList):
@@ -117,11 +124,11 @@ def findEncode(imagesList):
 encodeList, encode = findEncode(imgList)
 ```
 
-- This function converts the loaded images to RGB format and generates face encodings.
-- The encodeList will store the encodings for each user's face, which will later be used to compare against the live camera feed.
+- This function converts images to RGB format and generates face encodings.
+- The encodeList stores encoded data for each face, which will be compared to live video feed data.
+
 
 ### Loading Display Modes and User Information
-
 ```python
 folderModes = 'modes'
 folderList = os.listdir(folderModes)
@@ -130,7 +137,9 @@ modesList = []
 for mode in folderList:
     modesList.append(cv2.imread(os.path.join(folderModes, mode)))
 ```
-- Loads all mode images from the modes folder (such as mode1.png, mode2.png, etc.).
+
+- Loads mode images (e.g., mode1.png, mode2.png) from the modes folder for display purposes.
+
 ```python
 folderInformation = 'information'
 folderList2 = os.listdir(folderInformation)
@@ -139,26 +148,31 @@ informationList = []
 for infor in folderList2:
     informationList.append(cv2.imread(os.path.join(folderInformation, infor)))
 ```
-- Loads all user information images from the information folder.
+
+- Loads user information images (e.g., user profiles) from the information folder.
+
 ```python
 information_name = []
 for i in folderList2:
     i = i.split('.')
     information_name.append(i[0])
 ```
-- Extracts user information filenames without extensions (e.g., user1.jpg → user1).
 
-### Servo Control Functions
+- Extracts user information names from file names (e.g., user1.jpg → user1).
+
+### Servo control function
+
 ```python
-def control_servo_right(stop_servo_event)
+def control_servo_right(stop_servo_event):
 ```
 ```python
-def control_servo_left(stop_servo_event)
+def control_servo_left(stop_servo_event):
 ```
-- These functions handle the servo motor movement by setting the pulse width.
-- The motors rotate to specific angles (0°, 90°, and 180°) depending on the recognition result.
+
+- These functions control the servo motors for opening and closing the door based on the recognition result.
 
 ### Camera and Face Recognition Loop
+
 ```python
 def active_camera():
     cap = cv2.VideoCapture(0)
@@ -173,20 +187,24 @@ def active_camera():
         faceCurFrame = fr.face_locations(imgs)
         encodeCurFrame = fr.face_encodings(imgs, faceCurFrame)
 ```
-- Initializes the camera and continuously captures frames.
-- Converts the captured frames to RGB format and detects faces using face_recognition.
+
+- Initializes the camera and captures frames continuously.
+- Converts the frames to RGB and detects faces in real-time.
+
 ```python
 for encodeFace, faceLoc in zip(encodeCurFrame, faceCurFrame):
     matches = fr.compare_faces(encodeList, encodeFace)
     faceDis = fr.face_distance(encodeList, encodeFace)
     matchIndex = np.argmin(faceDis)
 ```
-- Compares the face encodings from the live feed against the preloaded encodings.
-- Finds the closest match and calculates the face distance to identify the user.
 
-### Start the threads
+- Compares detected faces with preloaded encodings.
+- Finds the best match by calculating face distances.
+
+### Starting Threads
+
 ```python
-camera_thread = threading.Thread(target = active_camera)
+camera_thread = threading.Thread(target=active_camera)
 camera_thread.start()
 engine_thread_right.start()
 engine_thread_left.start()
