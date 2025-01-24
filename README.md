@@ -73,9 +73,10 @@ pip install pigpio
 
 ## Raspberrypi config
 
-![image alt] ()
+![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/e956e761c5f304ac02251512e2aa49b3eda25601/z4919849768810_bbb5c2f63ca5426250d5d1053bf5051b.jpg)
 
-Config servo right using GPIO 17, servo left using GPIO 27
+Config servo right using GPIO 17, servo left using GPIO 27.
+Supply a 5V power to servo motors.
 
 ## Useage
 
