@@ -1,7 +1,7 @@
 # Automatic Door with Face Recognition Using Raspberry Pi 4
 
 ## Description
-This project uses face recognition technology to automatically control a door, enhancing security and convenience. It uses OpenCV and machine learning models to detect and authenticate faces.
+This project uses face recognition technology to automatically control a door, applied in attendance check, identity control. It uses OpenCV and machine learning models to detect and authenticate faces, and then use those data to control servo motor to open and close the door.
 
 ## Features
 ### Real-time face recognition.
@@ -11,8 +11,7 @@ This project uses face recognition technology to automatically control a door, e
 ![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/891d35c99282f7bc8749187392db03dfda564330/z4919849374500_f36938b58fbd2fd4013473915ef15f29.jpg)
 ### Automatic door control using a Raspberry Pi.
 - Automatically open the door after recognizing the user
-- Database integration for authorized users.
-- Email notifications for unauthorized access attempts.
+
 ### Design
 
 ![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/38c0c19ca5982e64a0bf5a5120d6e754e70f6826/z4919849715942_3f35fcb683f4dc47bdff133c2b6ae376.jpg)
@@ -72,7 +71,13 @@ pip install pillow
 pip install pigpio
 ```
 
-## Code explain
+## Raspberrypi config
+
+![image alt] ()
+
+Config servo right using GPIO 17, servo left using GPIO 27
+
+## Useage
 
 ### Loading User Face Data
 
