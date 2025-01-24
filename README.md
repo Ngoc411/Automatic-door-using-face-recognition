@@ -15,6 +15,8 @@ This project uses face recognition technology to automatically control a door, e
 - Email notifications for unauthorized access attempts.
 ### Design
 
+![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/38c0c19ca5982e64a0bf5a5120d6e754e70f6826/z4919849715942_3f35fcb683f4dc47bdff133c2b6ae376.jpg)
+
 ## Installation
 You can use this command to install Python packages directly in the system-wide environment using pip:
 ```bash
