@@ -5,8 +5,7 @@ This project uses face recognition technology to automatically control a door, a
 
 ## Features
 ### Real-time face recognition.
-- Find face in screen and identify whether the face exist on the database
-- Provide user information after recognized
+- This project identifies and authenticates faces in real-time, providing relevant user information and controlling a door mechanism as follows:
   
 ![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/891d35c99282f7bc8749187392db03dfda564330/z4919849374500_f36938b58fbd2fd4013473915ef15f29.jpg)
 ### Automatic door control using a Raspberry Pi.
