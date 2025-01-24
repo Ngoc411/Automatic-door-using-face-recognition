@@ -1,7 +1,7 @@
 # Automatic Door with Face Recognition Using Raspberry Pi 4
 
 ## Description
-This project uses face recognition technology to automatically control a door, applied in attendance check, identity control. This system uses OpenCV and machine learning models for face detection and authentication. Based on the authentication result, it controls a servo motor to open or close the door.
+This project uses face recognition technology to automatically control a door, applied in attendance check, identity control. This system uses OpenCV and machine learning models for face detection and authentication. Based on the authentication result, it controls servo motors to open or close the door.
 
 ## Features
 ### Real-time face recognition.
