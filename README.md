@@ -95,6 +95,8 @@ for i in imagesList:
     id_picture.append(i[0])
 ```
 
+![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/dcccf13e31b3784ec9a5678e7e859b598ef79bba/Screenshot%202025-01-24%20161023.png)
+
 - The program scans the images folder for all image files.
 - It extracts user IDs from the filenames (e.g., user1.jpg → user1).
 
