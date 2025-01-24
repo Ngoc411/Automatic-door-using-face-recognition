@@ -140,6 +140,8 @@ for mode in folderList:
     modesList.append(cv2.imread(os.path.join(folderModes, mode)))
 ```
 
+![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/e89b7dd9e80c9276894cb59b9b55803f22c24c72/Screenshot%202025-01-24%20161125.png)
+
 - Loads mode images (e.g., mode1.png, mode2.png) from the modes folder for display purposes.
 
 ```python
