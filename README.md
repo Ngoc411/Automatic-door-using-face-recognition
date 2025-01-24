@@ -17,6 +17,8 @@ This project uses face recognition technology to automatically control a door, e
 
 ![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/38c0c19ca5982e64a0bf5a5120d6e754e70f6826/z4919849715942_3f35fcb683f4dc47bdff133c2b6ae376.jpg)
 
+![image alt](https://github.com/Ngoc411/Automatic-door-using-face-recognition/blob/a05deb3d986b3e59de2ed5228ae26c68ed26ae4d/z4919849733856_0116874d3ac357bbe35e945eb1a62d83.jpg)
+
 ## Installation
 You can use this command to install Python packages directly in the system-wide environment using pip:
 ```bash
